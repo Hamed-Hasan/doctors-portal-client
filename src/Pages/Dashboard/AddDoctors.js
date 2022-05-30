@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 
 const AddDoctors = () => {
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
+    const { register, formState: { errors }, handleSubmit, reset } = useForm()
 const {data: services, isLoading} = useQuery('services', () =>  fetch('http://localhost:5000/service').then(res => res.json()));
 
 if(isLoading) {
@@ -61,9 +61,10 @@ const imageStorageKey = '0a489a5f81e1a77f2b17492e627939c3';
         <div>
             <h2 className='text-4xl my-4'>All Doctors</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+   <div className='container mx-auto'>
+   <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 justify-items-center'>
 
-<div className="form-control w-full max-w-xs">
+<div className="form-control w-full max-w-xs ">
     <label className="label">
         <span className="label-text">Name</span>
     </label>
@@ -122,12 +123,17 @@ const imageStorageKey = '0a489a5f81e1a77f2b17492e627939c3';
         </select>
 </div>
 <div className="form-control w-full max-w-xs">
-    <label className="label">
-        <span className="label-text">Email</span>
+    <label  class={
+                  
+                  "btn btn-primary  mt-5 text-white"
+                  
+               } for='img'>
+        Upload Image
     </label>
     <input
         type="file"
-        className="input input-bordered w-full max-w-xs"
+        id='img'
+        className="input input-bordered hidden w-full max-w-xs"
         {...register("image", {
             required: {
                 value: true,
@@ -135,13 +141,14 @@ const imageStorageKey = '0a489a5f81e1a77f2b17492e627939c3';
             }
         })}
     />
-    <label className="label">
-        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-    </label>
+   
 </div>
 
-<input className='btn w-full max-w-xs text-white' type="submit" value="Add" />
+
+
+<input className='btn my-5 w-full max-w-xs text-white' type="submit" value="Add" />
 </form>
+   </div>
         </div>
     );
 };
