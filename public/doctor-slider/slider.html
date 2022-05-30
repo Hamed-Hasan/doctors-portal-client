@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+		<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+		<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>Ken Burns Hero1 - Slider Revolution</title>
+			<meta name="description" content="Slider Revolution Example" />
+			<meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition" />
+			<meta name="author" content="ThemePunch" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- LOAD JQUERY LIBRARY -->
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+			
+			<!-- LOADING FONTS AND ICONS -->
+			<link href="https://fonts.googleapis.com/css?family=Roboto:400%7CAnton:400%7CMontserrat:400%2C600&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+			
+			<link rel="stylesheet" type="text/css" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+			<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+			
+			<!-- REVOLUTION STYLE SHEETS -->
+			<link rel="stylesheet" type="text/css" href="css/rs6.css">
+			<!-- REVOLUTION LAYERS STYLES -->
+						<!-- REVOLUTION JS FILES -->
+			
+		<script type="text/javascript">
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+					<script type="text/javascript" src="js/rbtools.min.js"></script>
+							<script type="text/javascript" src="js/rs6.min.js"></script>
+							
+			<script type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";					
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+
+			
+		</head>
+		
+		<body>
+		
+
+			<!-- START Ken Burns Hero1 REVOLUTION SLIDER 6.5.11 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_53_1_wrapper" data-alias="ken-burns-hero1" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+				<rs-module id="rev_slider_53_1" style="" data-version="6.5.11">
+					<rs-slides>
+						<rs-slide style="position: absolute;" data-key="rs-171" data-title="Ken Burns" data-anim="ms:500ms;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" title="deskimage.jpg" width="1920" height="900" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/deskimage.jpg" data-parallax="14" data-panzoom="d:20000ms;ss:115%;se:115%;os:-100px/0;oe:100px/0;" data-no-retina>
+<!--						--><rs-zone id="rrzt_171" class="rev_row_zone_top" style="z-index: 13;"><!--
+
+								--><rs-row
+									id="slider-53-slide-171-layer-0" 
+									data-type="row"
+									data-xy="xo:50px;yo:50px;"
+									data-rsp_bd="off"
+									data-margin="t:150,140,120,90;"
+									data-frame_0="o:1;"
+									data-frame_999="o:0;st:w;sR:8700;sA:9000;"
+									style="z-index:1;"
+								><!--
+									--><rs-column
+										id="slider-53-slide-171-layer-1" 
+										data-type="column"
+										data-xy="xo:50px;yo:50px;"
+										data-text="a:center;"
+										data-rsp_bd="off"
+										data-column="w:100%;"
+										data-frame_0="o:1;"
+										data-frame_999="o:0;st:w;sR:8700;sA:9000;"
+										style="z-index:2;width:100%;"
+									><!--
+										--><rs-layer
+											id="slider-53-slide-171-layer-4" 
+											data-type="text"
+											data-text="w:normal;s:100,80,60,40;l:100,80,60,40;a:center;"
+											data-rsp_o="off"
+											data-rsp_bd="off"
+											data-frame_0="o:1;"
+											data-frame_0_chars="d:5;y:cyc(-80|80);o:0;rX:0deg;"
+											data-frame_0_mask="u:t;"
+											data-frame_1="e:power4.out;st:300;sp:1000;sR:300;"
+											data-frame_1_chars="e:power4.out;dir:random;d:5;"
+											data-frame_1_mask="u:t;"
+											data-frame_999="o:0;st:w;sR:7310;"
+											style="z-index:3;font-family:'Anton';"
+										>Your New Smile Starts Here<br />
+ 
+										</rs-layer><!--
+
+										--><rs-layer
+											id="slider-53-slide-171-layer-5" 
+											data-type="text"
+											data-text="w:normal;s:17,17,15,13;l:30,30,25,20;a:center;"
+											data-rsp_o="off"
+											data-rsp_bd="off"
+											data-margin="t:50,40,30,20;"
+											data-frame_0="y:20px;"
+											data-frame_1="e:power4.out;st:350;sp:1000;sR:350;"
+											data-frame_999="o:0;st:w;sR:7650;"
+											style="z-index:4;font-family:'Montserrat';"
+										>Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda </br>excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.<br />
+<br />
+ 
+										</rs-layer><!--
+
+										--><rs-layer
+											id="slider-53-slide-171-layer-6" 
+											class="rev-btn"
+											data-type="button"
+											data-bsh="c:rgba(0,0,0,0.15);v:10px;b:20px;"
+											data-text="w:normal;s:17,17,15,15;l:48,48,40,40;fw:600;"
+											data-dim="minh:0px,none,none,none;"
+											data-actions='o:click;a:scrollbelow;sp:1000ms;e:power1.inOut;'
+											data-rsp_o="off"
+											data-rsp_bd="off"
+											data-disp="inline-block"
+											data-margin="t:70,60,50,30;"
+											data-padding="r:39,39,30,30;l:39,39,30,30;"
+											data-border="bos:solid;boc:#ffffff;bow:1px,1px,1px,1px;bor:3px,3px,3px,3px;"
+											data-frame_0="y:20px;"
+											data-frame_1="e:power4.out;st:400;sp:1000;sR:400;"
+											data-frame_999="o:0;st:w;sR:7600;"
+											data-frame_hover="c:#fff;boc:rgba(255,255,255,0.5);bor:3px,3px,3px,3px;bos:solid;bow:1px,1px,1px,1px;sp:300ms;e:power1.inOut;bri:100%;"
+											style="z-index:5;font-family:'Montserrat';cursor:pointer;display:inline-block;"
+										>Learn More 
+										</rs-layer><!--
+									--></rs-column><!--
+								--></rs-row><!--
+							--></rs-zone><!--
+
+							--><rs-layer
+								id="slider-53-slide-171-layer-10" 
+								data-type="shape"
+								data-rsp_ch="on"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:100%;h:100%;"
+								data-basealign="slide"
+								data-frame_1="e:power2.inOut;sp:500;"
+								data-frame_999="o:0;e:power2.inOut;st:w;sp:500;sR:8500;"
+								style="z-index:11;background-color:rgba(0,0,0,0.25);"
+							> 
+							</rs-layer><!--
+-->						</rs-slide>
+					</rs-slides>
+				</rs-module>
+				<script type="text/javascript">
+					
+				</script>
+<script type="text/javascript">
+		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
+</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+
+				<script type="text/javascript">
+					var	tpj = jQuery;
+					if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+					if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+					RS_MODULES.modules["revslider531"] = {once: RS_MODULES.modules["revslider531"]!==undefined ? RS_MODULES.modules["revslider531"].once : undefined, init:function() {
+						window.revapi53 = window.revapi53===undefined || window.revapi53===null || window.revapi53.length===0  ? document.getElementById("rev_slider_53_1") : window.revapi53;
+						if(window.revapi53 === null || window.revapi53 === undefined || window.revapi53.length==0) { window.revapi53initTry = window.revapi53initTry ===undefined ? 0 : window.revapi53initTry+1; if (window.revapi53initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider531"].init()}); return;}
+						window.revapi53 = jQuery(window.revapi53);
+						if(window.revapi53.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_53_1"); return;}
+						revapi53.revolutionInit({
+								revapi:"revapi53",
+								sliderType:"hero",
+								DPR:"dpr",
+								sliderLayout:"fullwidth",
+								visibilityLevels:"1240,1024,778,480",
+								gridwidth:"1240,1024,778,480",
+								gridheight:"630,570,472,352",
+								lazyType:"all",
+								spinner:"spinner7",
+								perspective:600,
+								perspectiveType:"local",
+								keepBPHeight:true,
+								editorheight:"630,570,472,352",
+								responsiveLevels:"1240,1024,778,480",
+								progressBar:{disableProgressBar:true},
+								navigation: {
+									onHoverStop:false
+								},
+								parallax: {
+									levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,30],
+									type:"scroll",
+									origo:"slidercenter",
+									speed:0
+								},
+								viewPort: {
+									global:false,
+									globalDist:"-200px",
+									enable:false
+								},
+								fallbacks: {
+									allowHTML5AutoPlayOnAndroid:true
+								},
+						});
+						
+					}} // End of RevInitScript
+					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+				</script>
+
+
+
+		</body>
+				</html>
+		
