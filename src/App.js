@@ -22,6 +22,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from 'react';
 import ContactUs from './Pages/ContactUs/ContactUs';
+import AddReviews from './Pages/Dashboard/AddReviews';
 
 function App() {
   useEffect(() => {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<ContactUs />} />
+        <Route path="review" element={<AddReviews />} />
         <Route path="appointment" element={
           <RequireAuth>
             <Appointment />
