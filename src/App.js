@@ -21,6 +21,7 @@ import Payment from './Pages/Dashboard/Payment';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from 'react';
+import ContactUs from './Pages/ContactUs/ContactUs';
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="contact" element={<ContactUs />} />
         <Route path="appointment" element={
           <RequireAuth>
             <Appointment />
