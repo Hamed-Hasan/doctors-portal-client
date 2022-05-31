@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 
@@ -45,17 +46,26 @@ const AddReviews = () => {
             },
             body: JSON.stringify(review)
         })
-        .then(res => res.json())
+        .then(res => {
+            console.log('my res', res);
+            return res.json()
+        })
         .then(data => {
-            console.log(data)
+            if(data.result === 'data receive'){
+                toast.success('Review Added', {theme: 'dark'})
+            }else{
+                toast.error('Failed to Review')
+            }
+            console.log('my data',data)
         })
     }
     return (
         <div className="w-full p-10 lg:w-1/2 mx-auto">
             <form className="card-body pb-0" onSubmit={handleSubmit(onSubmit)}>
                 <div className='avatar mx-auto flex-col items-center gap-3'>
-                <div className='w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'></div>
+                <div className='w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'>
                 <img src={user?.photoURL} alt={user?.displayName} />
+                </div>
                 </div>
                 <h2 className='text-2xl font-bold'>{user?.displayName}</h2>
                 <div className='flex flex-row justify-center'>
