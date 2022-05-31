@@ -18,8 +18,14 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddDoctors from './Pages/Dashboard/AddDoctors';
 import ManageDoctor from './Pages/Dashboard/ManageDoctor';
 import Payment from './Pages/Dashboard/Payment';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className='max-w-7xl mx-auto px-12'>
       <Navbar></Navbar>

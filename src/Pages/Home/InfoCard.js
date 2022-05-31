@@ -2,7 +2,8 @@ import React from 'react';
 
 const InfoCard = ({img, cardTitle, bgClass}) => {
     return (
-        <div className={`card lg:card-side bg-base-100 shadow-xl ${bgClass}`}>
+        <div className={`card lg:card-side bg-base-100 shadow-xl ${bgClass}`} data-aos="zoom-in"
+        data-aos-duration="1000">
             <figure className='pl-5 pt-5'>
                 <img src={img} alt="Album" />
             </figure>
