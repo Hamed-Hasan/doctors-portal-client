@@ -4,7 +4,7 @@ import MyReviews from './MyReviews';
 const MyReview = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('https://doctors-portal-server-rosy.vercel.app/showReview')
+        fetch('https://aqueous-savannah-97550.herokuapp.com/showReview')
         .then(res => res.json())
         .then(data => setReviews(data))
     }, []);

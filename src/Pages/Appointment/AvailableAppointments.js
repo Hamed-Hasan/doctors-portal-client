@@ -9,7 +9,7 @@ const AvailableAppointments = ({ date }) => {
 
     const formattedDate = format(date, 'PP');
     useEffect(() => {
-        fetch(`https://doctors-portal-server-rosy.vercel.app/available?date=${formattedDate}`)
+        fetch(`https://aqueous-savannah-97550.herokuapp.com/available?date=${formattedDate}`)
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])

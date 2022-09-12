@@ -13,7 +13,7 @@ const MyAppointments = () => {
 
     useEffect(() => {
         
-    fetch(`https://doctors-portal-server-rosy.vercel.app/booking?patient=${user.email}`, {
+    fetch(`https://aqueous-savannah-97550.herokuapp.com/booking?patient=${user.email}`, {
         // verify user 
         method: 'GET',
         headers: {

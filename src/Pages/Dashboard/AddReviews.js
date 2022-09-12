@@ -38,7 +38,7 @@ const AddReviews = () => {
         console.log(review);
 
         // add review to database
-        fetch("https://doctors-portal-server-rosy.vercel.app/addReview", {
+        fetch("https://aqueous-savannah-97550.herokuapp.com/addReview", {
             method: 'POST',
             headers: {
                 "content-type" : "application/json",

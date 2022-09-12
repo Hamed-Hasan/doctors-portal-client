@@ -14,7 +14,7 @@ const CheckoutForm = ({appointment}) => {
     const { _id, price, patient, patientName } = appointment;
 
     useEffect(() => {
-        fetch('https://doctors-portal-server-rosy.vercel.app/create-payment-intent', {
+        fetch('https://aqueous-savannah-97550.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -81,7 +81,7 @@ const CheckoutForm = ({appointment}) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://doctors-portal-server-rosy.vercel.app/booking/${_id}`, {
+            fetch(`https://aqueous-savannah-97550.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
