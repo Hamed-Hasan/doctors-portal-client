@@ -13,7 +13,7 @@ const MyAppointments = () => {
 
     useEffect(() => {
         
-    fetch(`http://localhost:5000/booking?patient=${user.email}`, {
+    fetch(`https://doctors-portal-server-rosy.vercel.app/booking?patient=${user.email}`, {
         // verify user 
         method: 'GET',
         headers: {

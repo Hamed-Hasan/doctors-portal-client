@@ -38,7 +38,7 @@ const AddReviews = () => {
         console.log(review);
 
         // add review to database
-        fetch("http://localhost:5000/addReview", {
+        fetch("https://doctors-portal-server-rosy.vercel.app/addReview", {
             method: 'POST',
             headers: {
                 "content-type" : "application/json",

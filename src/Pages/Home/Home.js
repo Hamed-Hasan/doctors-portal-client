@@ -6,13 +6,14 @@ import Info from './Info';
 import MakeAppointment from './MakeAppointment';
 import Services from './Services';
 import Testimonials from './Testimonials';
-import Exercises from '../Exercises/Exercises';
+
 
 const Home = () => {
     return (
         <div>
-            {/* <Banner></Banner> */}
-            <Exercises/>
+            <Banner></Banner>
+          
+          
             <Info></Info>
             <Services></Services>
             <MakeAppointment></MakeAppointment>

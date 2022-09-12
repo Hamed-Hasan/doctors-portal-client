@@ -6,11 +6,14 @@ const Banner = () => {
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={chair} className="max-w-sm rounded-lg shadow-2xl" />
+                <img  src={chair} className="max-w-sm rounded-lg shadow-2xl" data-aos="zoom-in"
+     data-aos-duration="4000" />
                 <div>
-                    <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <PrimaryButton>Get Started</PrimaryButton>
+                    <h1 className="text-5xl font-bold" data-aos="fade-right"
+     data-aos-duration="2000">Your New Smile Starts Here</h1>
+                    <p className="py-6" data-aos="fade-right"
+     data-aos-duration="3000" data-aos-delay="2000">You'll interact with professionals other than the dentist when you get your teeth checked. Be able to communicate with a dental receptionist and dental hygienist—they will be the first people you talk to during your next dentist appointment..</p>
+                    <PrimaryButton >Get Started</PrimaryButton>
                 </div>
             </div>
         </div>

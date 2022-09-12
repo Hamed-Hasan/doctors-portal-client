@@ -7,7 +7,7 @@ import Loading from '../Shared/Loading';
 const AddDoctors = () => {
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm()
-const {data: services, isLoading} = useQuery('services', () =>  fetch('http://localhost:5000/service').then(res => res.json()));
+const {data: services, isLoading} = useQuery('services', () =>  fetch('https://doctors-portal-server-rosy.vercel.app/service').then(res => res.json()));
 
 if(isLoading) {
     return <Loading/>
@@ -34,7 +34,7 @@ const imageStorageKey = '0a489a5f81e1a77f2b17492e627939c3';
                 img: img
             }
             // send to database 
-            fetch('http://localhost:5000/doctors', {   
+            fetch('https://doctors-portal-server-rosy.vercel.app/doctors', {   
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

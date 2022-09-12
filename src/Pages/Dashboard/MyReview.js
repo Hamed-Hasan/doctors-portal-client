@@ -4,7 +4,7 @@ import MyReviews from './MyReviews';
 const MyReview = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/showReview')
+        fetch('https://doctors-portal-server-rosy.vercel.app/showReview')
         .then(res => res.json())
         .then(data => setReviews(data))
     }, []);

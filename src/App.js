@@ -23,6 +23,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import AddReviews from './Pages/Dashboard/AddReviews';
+import Notfound from './Pages/Shared/Notfound';
 
 function App() {
   useEffect(() => {
@@ -54,6 +55,7 @@ function App() {
 
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<Notfound />} />
       </Routes>
       <ToastContainer />
     </div>
