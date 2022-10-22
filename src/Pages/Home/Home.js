@@ -10,7 +10,7 @@ import Testimonials from './Testimonials';
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <Banner></Banner>
           
           

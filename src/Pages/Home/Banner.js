@@ -5,8 +5,8 @@ import PrimaryButton from '../Shared/PrimaryButton';
 const Banner = () => {
     return (
         <div className="hero min-h-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <img  src={chair} className="max-w-sm rounded-lg shadow-2xl" data-aos="zoom-in"
+            <div className=" flex flex-col lg:flex-row-reverse">
+                <img  src={chair} className="w-full lg:max-w-sm rounded-lg shadow-2xl" data-aos="zoom-in"
      data-aos-duration="4000" />
                 <div>
                     <h1 className="text-5xl font-bold" data-aos="fade-right"

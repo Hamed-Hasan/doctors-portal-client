@@ -4,7 +4,7 @@ const Service = ({ service, setTreatment }) => {
     // console.log(service)
     const { name, slots,price } = service;
     return (
-        <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+        <div className="card lg:max-w-lg w-full bg-base-100 shadow-xl">
             <div className="card-body text-center">
                 <h2 className="text-xl font-bold text-secondary">{name}</h2>
                 <p>{
