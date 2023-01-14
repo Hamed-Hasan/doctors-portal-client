@@ -10,7 +10,7 @@ const AvailableAppointments = ({ date }) => {
 
     const formattedDate = format(date, 'PP');
 
-    const { data: services, isLoading, refetch } = useQuery('services', () => fetch(`https://doctors-portal-server-mvc.vercel.appavailable?date=${formattedDate}`, {
+    const { data: services, isLoading, refetch } = useQuery('services', () => fetch(`https://doctors-portal-server-mvc.vercel.app/available?date=${formattedDate}`, {
         method: 'GET',
         // headers: {
         //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
