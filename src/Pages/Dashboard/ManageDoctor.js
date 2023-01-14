@@ -7,7 +7,7 @@ import DoctorRow from './DoctorRow';
 
 const ManageDoctor = () => {
     const [deletingDoctor, setDeletingDoctor] = useState(null);
-    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('https://aqueous-savannah-97550.herokuapp.com/doctors', {
+    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('https://doctors-portal-server-mvc.vercel.app/doctors', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

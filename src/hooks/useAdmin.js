@@ -6,7 +6,7 @@ const useAdmin = user => {
     useEffect( () =>{
         const email = user?.email;
         if(email){
-            fetch(`https://aqueous-savannah-97550.herokuapp.com/admin/${email}`, {
+            fetch(`https://doctors-portal-server-mvc.vercel.app/admin/${email}`, {
                 method:'GET',
                 headers: {
                     'content-type': 'application/json',

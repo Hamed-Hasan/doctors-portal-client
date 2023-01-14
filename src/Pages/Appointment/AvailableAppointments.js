@@ -10,7 +10,7 @@ const AvailableAppointments = ({ date }) => {
 
     const formattedDate = format(date, 'PP');
 
-    const { data: services, isLoading, refetch } = useQuery('services', () => fetch(`https://aqueous-savannah-97550.herokuapp.com/available?date=${formattedDate}`, {
+    const { data: services, isLoading, refetch } = useQuery('services', () => fetch(`https://doctors-portal-server-mvc.vercel.appavailable?date=${formattedDate}`, {
         method: 'GET',
         // headers: {
         //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,7 +22,7 @@ const AvailableAppointments = ({ date }) => {
         .then(res => res.json()));
         refetch();
     // useEffect(() => {
-    //     fetch(`https://aqueous-savannah-97550.herokuapp.com/available?date=${formattedDate}`)
+    //     fetch(`https://doctors-portal-server-mvc.vercel.appavailable?date=${formattedDate}`)
     //         .then(res => res.json())
     //         .then(data => setServices(data));
     // }, [])

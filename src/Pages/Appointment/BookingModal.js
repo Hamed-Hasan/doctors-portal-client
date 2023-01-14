@@ -22,7 +22,7 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
             phone: event.target.phone.value
         }
 
-        fetch('https://aqueous-savannah-97550.herokuapp.com/booking', {
+        fetch('https://doctors-portal-server-mvc.vercel.app/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
