@@ -18,9 +18,11 @@ const AvailableAppointments = ({ date }) => {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
           }
+          
     })
         .then(res => res.json()));
         refetch();
+        // console.log(services.data)
     // useEffect(() => {
     //     fetch(`https://doctors-portal-server-mvc.vercel.appavailable?date=${formattedDate}`)
     //         .then(res => res.json())
@@ -33,7 +35,7 @@ const AvailableAppointments = ({ date }) => {
             <h4 className='text-xl text-secondary text-center my-12'>Available Appointments on {format(date, 'PP')}</h4>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 { services &&
-                    services?.map(service => <Service
+                    services?.data?.map(service => <Service
                         key={service._id}
                         service={service}
                         setTreatment={setTreatment}
