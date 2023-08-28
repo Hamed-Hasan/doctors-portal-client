@@ -4,15 +4,27 @@ import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
-    const {data: users, isLoading, refetch} = useQuery('users', () => fetch('https://doctors-portal-server-mvc.vercel.app/user', {
-        method: 'GET',
-        headers:{
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
-    }).then(res => res.json()));
-    if(isLoading) {
-        return <Loading/>
+  const { data: users, isLoading, refetch } = useQuery(
+    'users',
+    async () => {
+        const response = await fetch('https://doctors-portal-server-mvc.vercel.app/user', {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+            },
+        });
+        const responseData = await response.json();
+        return Array.isArray(responseData) ? responseData : []; // Handle non-array responses
     }
+);
+console.log(users)
+if (isLoading) {
+    return <Loading />;
+}
+
+if (!Array.isArray(users)) {
+    return <p>Users data is not in the expected format.</p>;
+}
     return (
         <>
                 <h2 className="text-2xl">All Users: {users?.length}</h2>

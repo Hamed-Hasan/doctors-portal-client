@@ -70,7 +70,7 @@ const AddReviews = () => {
                 <h2 className='text-2xl font-bold'>{user?.displayName}</h2>
                 <div className='flex flex-row justify-center'>
                 {
-                    stars.map((_, index) => {
+                    stars?.map((_, index) => {
                         return(
                             <FaStar 
                             key={index}

@@ -7,10 +7,25 @@ import Loading from '../Shared/Loading';
 const AddDoctors = () => {
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm()
-const {data: services, isLoading} = useQuery('services', () =>  fetch('https://doctors-portal-server-mvc.vercel.app/service').then(res => res.json()));
+    const { data: services, isLoading } = useQuery(
+        'services',
+        async () => {
+            const response = await fetch('https://doctors-portal-server-mvc.vercel.app/service');
+            const responseData = await response.json();
+            
+            if (!Array.isArray(responseData.data)) {
+                console.error('Services data is not in the expected format:', responseData);
+            }
+            
+            return responseData.data || [];
+        }
+    );
 
-if(isLoading) {
-    return <Loading/>
+    if (isLoading) {
+        return <Loading />;
+    }
+if (!Array.isArray(services)) {
+    return <p>Services data is not in the expected format.</p>;
 }
 
 const imageStorageKey = '0a489a5f81e1a77f2b17492e627939c3';
@@ -115,7 +130,7 @@ const imageStorageKey = '0a489a5f81e1a77f2b17492e627939c3';
 
     <select {...register('specialty')} class="select input-bordered w-full max-w-xs">
         {
-            services.map(service => <option
+            services?.map(service => <option
             key={service._id}
             value={service.name}
             >{service.name}</option>)
